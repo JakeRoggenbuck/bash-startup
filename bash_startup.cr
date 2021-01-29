@@ -38,7 +38,7 @@ class Aliases
 
 	def get_random_alias
 		rand = Random.new
-		random_index = rand.rand(0..@aliases.size)
+		random_index = rand.rand(0..@aliases.size-1)
 		return @aliases[random_index]
 	end
 
