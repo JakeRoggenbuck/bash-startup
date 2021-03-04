@@ -1,0 +1,24 @@
+#! /usr/bin/env python3
+import requests
+from random import randint, choice
+from sys import argv
+
+
+def pull_line():
+    with open("/home/jake/.cht_sheet_entry", "w") as file:
+        lang = choice(["python", "c++", "git"])
+        result = requests.get(f"https://cht.sh/{lang}/:random")
+
+        file.write(f"{lang}:\n" + result.text)
+
+
+def print_line():
+    with open("/home/jake/.cht_sheet_entry") as file:
+        print(file.read())
+
+
+if __name__ == "__main__":
+    if "pull" in argv:
+        pull_line()
+    if "print" in argv:
+        print_line()
