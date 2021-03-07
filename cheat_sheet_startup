@@ -2,14 +2,16 @@
 import requests
 from random import randint, choice
 from sys import argv
+import re
 
 
 def pull_line():
     with open("/home/jake/.cht_sheet_entry", "w") as file:
         lang = choice(["python", "c++", "git"])
         result = requests.get(f"https://cht.sh/{lang}/:random")
+        result = re.sub(r"38;5;246;03m", "38;5;246m", result.text)
 
-        file.write(f"{lang}:\n" + result.text)
+        file.write(f"{lang}:\n" + result)
 
 
 def print_line():
