@@ -1,6 +1,8 @@
 # bash_startup
+A program that runs every time I open a terminal
 
 More complex things I want to run when my bashrc runs (external scripts)
+
 ![Screenshot from 2021-04-16 21-05-46](https://user-images.githubusercontent.com/35516367/115101747-9644c000-9efb-11eb-92f2-c01e200249d2.png)
 
 
